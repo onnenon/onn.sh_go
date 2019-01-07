@@ -9,4 +9,4 @@ stop:
 	docker rm -f onn-sh || true
 
 dev-run: stop
-	docker run -d -p 8080:80 --name=onn-sh --restart=always onn-sh:latest
+	docker run -p 8080:8080 --name=onn-sh --restart=always onn-sh:latest

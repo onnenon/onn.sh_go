@@ -1,9 +1,11 @@
-FROM golang:latest as builder
+# build image
+FROM golang as builder
 
 WORKDIR /opt
 
 COPY . .
 
+# compile
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app cmd/app/* 
 
 # deployment image
@@ -14,7 +16,7 @@ LABEL author="Stephen Onnen"
 
 WORKDIR /root/
 
-COPY --from=builder /opt/* .
+COPY --from=builder /opt/ .
 
 CMD [ "./app" ]
 

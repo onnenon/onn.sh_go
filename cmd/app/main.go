@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	addr := flag.String("addr", ":5000", "HTTP network address")
+	addr := flag.String("addr", ":8080", "HTTP network address")
 
 	flag.Parse()
 
