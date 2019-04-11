@@ -6,7 +6,7 @@ WORKDIR /opt
 COPY . .
 
 # compile
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=8 go build -a -installsuffix cgo -o app cmd/app/* 
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -installsuffix cgo -o app cmd/app/* 
 
 # deployment image
 FROM alpine:latest  
