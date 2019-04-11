@@ -16,7 +16,7 @@ func main() {
 	mux.HandleFunc("/", home)
 
 	// Create file server for static assets
-	fileServer := http.FileServer(http.Dir("./assets/static"))
+	fileServer := http.FileServer(http.Dir("./web/static"))
 	mux.Handle("/static/", http.StripPrefix("/static/", fileServer))
 
 	log.Printf("Starting server on %s", *addr)
